@@ -2,7 +2,7 @@
  * Angular Material Design
  * https://github.com/angular/material
  * @license MIT
- * v1.0.6-master-ba130f2
+ * v1.1.0-rc.5-master-8568cee
  */
 (function( window, angular, undefined ){
 "use strict";
@@ -96,7 +96,7 @@ function getDirective(name) {
       function postLink(scope, element, attr) {
         var fn = $parse(attr[directiveName]);
         element.on(eventName, function(ev) {
-          scope.$apply(function() { fn(scope, { $event: ev }); });
+          scope.$applyAsync(function() { fn(scope, { $event: ev }); });
         });
       }
     }
